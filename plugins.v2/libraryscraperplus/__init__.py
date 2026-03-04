@@ -19,21 +19,21 @@ from app.schemas import MediaType
 from app.utils.system import SystemUtils
 
 
-class LibraryScraper(_PluginBase):
+class LibraryScraperPlus(_PluginBase):
   # 插件名称
-  plugin_name = "媒体库刮削"
+  plugin_name = "媒体库刮削Pro"
   # 插件描述
-  plugin_desc = "定时对媒体库进行刮削，补齐缺失元数据和图片。"
+  plugin_desc = "定时对媒体库进行刮削，补齐缺失元数据和图片。支持只处理追更模式，自动跳过已完结剧集。"
   # 插件图标
   plugin_icon = "nullbr.png"
   # 插件版本
-  plugin_version = "2.2.0"
+  plugin_version = "1.0.0"
   # 插件作者
-  plugin_author = "jxxghp"
+  plugin_author = "ifwwww"
   # 作者主页
-  author_url = "https://github.com/jxxghp"
+  author_url = "https://github.com/ifwwww"
   # 插件配置项ID前缀
-  plugin_config_prefix = "libraryscraper_"
+  plugin_config_prefix = "libraryscraperplus_"
   # 加载顺序
   plugin_order = 7
   # 可使用的用户级别
@@ -140,16 +140,16 @@ class LibraryScraper(_PluginBase):
     """
     if self._enabled and self._cron:
       return [{
-        "id": "LibraryScraper",
-        "name": "媒体库刮削",
+        "id": "LibraryScraperPlus",
+        "name": "媒体库刮削Pro",
         "trigger": CronTrigger.from_crontab(self._cron),
         "func": self.__libraryscraper,
         "kwargs": {}
       }]
     elif self._enabled:
       return [{
-        "id": "LibraryScraper",
-        "name": "媒体库刮削",
+        "id": "LibraryScraperPlus",
+        "name": "媒体库刮削Pro",
         "trigger": CronTrigger.from_crontab("0 0 */7 * *"),
         "func": self.__libraryscraper,
         "kwargs": {}
