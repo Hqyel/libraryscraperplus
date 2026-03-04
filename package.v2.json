@@ -1,9 +1,9 @@
 {
-  "libraryscraperplus": {
+  "LibraryScraperPlus": {
     "name": "媒体库刮削魔改",
-    "description": "",
+    "description": "定时对媒体库进行刮削，补齐缺失元数据和图片。支持只处理追更模式，自动跳过已完结剧集。",
     "labels": "资源",
-    "version": "2.2.0",
+    "version": "1.0.0",
     "icon": "https://raw.githubusercontent.com/Hqyel/MoviePilot-Plugins/main/icons/nullbr.png",
     "author": "Hqyel",
     "level": 1,
